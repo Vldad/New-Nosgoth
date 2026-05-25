@@ -5,6 +5,8 @@
 Site web communautaire francophone dédié à la saga **Legacy of Kain**, en cours de refonte.
 La communauté s'appelle "Le Royaume de Nosgoth" et existe depuis 2001.
 
+**Repo GitHub :** https://github.com/Vldad/New-Nosgoth
+
 ---
 
 ## Architecture cible (migration en cours)
@@ -32,9 +34,10 @@ nosgoth/
 │   ├── sidebar.php     ← colonne droite (YouTube, Twitch, Forum, Liens rapides)
 │   └── footer.php      ← footer flottant 4 sections
 ├── assets/
-│   ├── logo-original.jpg   ← logo du site (à convertir en .webp)
-│   ├── logo.png            ← logo fond transparent (à convertir en .webp)
-│   └── pillars-bg.png      ← fond Piliers de Nosgoth (à convertir en .webp)
+│   ├── logo-original.webp  ← logo du site
+│   ├── pillars-bg.webp     ← fond Piliers de Nosgoth
+│   ├── *.webp              ← visuels jeux (BO1, SR1, SR2, BO2, Def, Asc…)
+│   └── icons/              ← icônes nav (BO1, SR1, SR2, BO2, DEF, ASC, DEF_REM, SR12_REM)
 ├── css/
 │   ├── main.css            ← styles partagés (header, bandeau, sidebar, footer, bg)
 │   ├── pages.css           ← styles des contenus de page
@@ -73,10 +76,10 @@ include 'layout/bandeau.php';
 
 ---
 
-## État actuel du projet (fichiers générés)
+## État actuel du projet
 
-Le ZIP `nosgoth-site-v5-bgfix.zip` contient la version HTML+JS fonctionnelle.
-C'est la base de travail pour la migration PHP.
+Version HTML+JS fonctionnelle — base de travail pour la migration PHP.
+Repo : https://github.com/Vldad/New-Nosgoth (branche `master`)
 
 ### Ce qui fonctionne
 - Design complet responsive (desktop + mobile)
@@ -88,10 +91,10 @@ C'est la base de travail pour la migration PHP.
 - Blocs semi-transparents (rgba 72% opacité + backdrop-filter blur)
 - Transitions inter-pages fade+slide (CSS classes + double rAF)
 - Anti-flash au chargement (body.layout-loading visibility:hidden)
+- Toutes les images converties en WebP ✅
 
 ### Ce qui reste à faire
 - [ ] Migration HTML → PHP avec includes
-- [ ] Convertir toutes les images en WebP
 - [ ] `layout.js` → supprimer, remplacer par `transitions.js` allégé
 - [ ] Tester les transitions avec le PHP (le mécanisme reste identique)
 - [ ] Contenu réel (remplacer les lorem ipsum)
@@ -215,7 +218,7 @@ Seul `#site-body` est animé — le header/bandeau/footer restent fixes visuelle
 | Boutons CSS (pas image) | ✅ OK | Déjà respecté |
 | Animations CSS | ⚠️ Partiel | Styles en CSS, déclenchement inter-pages nécessite JS (incontournable) |
 | Mobile CSS uniquement | ⚠️ Partiel | Responsive layout en CSS, même JS de transition sur mobile |
-| Images WebP | ❌ À faire | Convertir logo-original, logo, pillars-bg |
+| Images WebP | ✅ Fait | Tous les assets sont en .webp |
 | Injection layout sans JS | ✅ Cible PHP | Migration en cours vers includes PHP |
 
 ---
@@ -231,6 +234,8 @@ Seul `#site-body` est animé — le header/bandeau/footer restent fixes visuelle
 | soul-reaver-2.php | Soul Reaver 2 (2001) | `'soul-reaver-2'` |
 | blood-omen-2.php | Blood Omen 2 (2002) | `'blood-omen-2'` |
 | defiance.php | Defiance (2003) | `'defiance'` |
+| defiance-remastered.php | Defiance Remastered (2025) | `'defiance-remastered'` |
+| soul-reaver-remasters.php | Soul Reaver Remasters (2024) | `'soul-reaver-remasters'` |
 | ascendance.php | Ascendance (2026) | `'ascendance'` |
 | fan-fictions.php | Fan-Fictions | `'fan-fictions'` |
 | chroniques.php | Chroniques | `'chroniques'` |
