@@ -1,0 +1,259 @@
+/* ═══════════════════════════════════════════════════
+   ROYAUME DE NOSGOTH — pages.css
+   Content-specific styles (left column areas)
+═══════════════════════════════════════════════════ */
+
+/* ════════ HOME PAGE ════════ */
+.left-col { display: flex; flex-direction: column; }
+
+.intro-block {
+  background: var(--s8);
+  border-bottom: 1px solid var(--s6);
+  padding: 1.5rem 2.5vw;
+}
+
+/* Text + buttons side by side */
+.intro-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.1rem;
+}
+.intro-lead {
+  flex: 1;
+  font-size: 1.15rem;
+  color: var(--s1);
+  line-height: 1.8;
+}
+.intro-lead strong { color: var(--s0); font-weight: 600; }
+
+.intro-btns {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  min-width: 190px;
+}
+
+/* Quote */
+.intro-quote {
+  border-left: 2px solid var(--blood);
+  padding-left: 1rem;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+  color: var(--s1);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+.intro-quote cite {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: .62rem;
+  letter-spacing: .15em;
+  color: var(--blood-lt);
+  font-style: normal;
+  margin-top: .25rem;
+  text-transform: uppercase;
+}
+
+/* Featured article — full width, below text */
+.intro-featured {
+  background: var(--s7);
+  padding: 1.2rem 1.3rem;
+  position: relative;
+}
+
+.intro-reaver {
+  position: absolute;
+  right: 1.5rem;
+  top: -2rem;
+  height: calc(100% + 3.5rem);
+  width: auto;
+  opacity: 0.52;
+  pointer-events: none;
+  object-fit: contain;
+  object-position: bottom;
+  filter: brightness(0.8) sepia(0.3);
+  transform: rotate(4deg);
+}
+.intro-featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blood), var(--blood-lt), transparent);
+}
+.if-tag   { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: .25em; text-transform: uppercase; color: var(--blood-lt); margin-bottom: .4rem; }
+.if-title { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--s0); line-height: 1.3; margin-bottom: .6rem; font-weight: 600; }
+.if-body  { font-size: 1.05rem; color: var(--s1); line-height: 1.75; }
+.if-meta  { font-size: .85rem; color: var(--s2); font-style: italic; margin-top: .5rem; }
+
+/* News feed */
+.news-feed { display: flex; flex-direction: column; gap: 1px; background: rgba(139,26,26,.07); }
+
+.ncard {
+  background: var(--s8);
+  padding: 1rem 2.5vw .9rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+.ncard:hover { background: var(--s7); }
+.ncard::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--blood-lt);
+  transform: scaleX(0);
+  transform-origin: top;
+}
+.ncard:hover::before { transform: scaleX(1); }
+
+.ntag   { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: .25em; text-transform: uppercase; color: var(--blood-lt); margin-bottom: .2rem; }
+.ntitle { font-family: 'Cinzel', serif; font-size: .92rem; color: var(--s0); line-height: 1.3; margin-bottom: .3rem; font-weight: 600; }
+.nbody  { font-size: 1.05rem; color: var(--s1); line-height: 1.7; margin-bottom: .25rem; }
+.nmeta  { font-size: .85rem; color: var(--s2); font-style: italic; }
+
+/* ════════ LORE PAGE ════════ */
+.lore-main {
+  padding: 2rem 2.5vw;
+}
+
+.page-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  color: var(--blood-lt);
+  margin-bottom: .6rem;
+}
+.page-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  color: var(--s0);
+  font-weight: 400;
+  margin-bottom: .5rem;
+}
+.page-title strong { color: var(--blood-lt); font-weight: 700; }
+.page-sub {
+  font-size: .97rem;
+  color: var(--td);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--s6);
+}
+
+.loregrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--s5);
+  margin-bottom: 2rem;
+}
+.lc {
+  background: var(--s8);
+  padding: 1.4rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.lc:hover { background: var(--s7); }
+.lc::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--blood-lt);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.lc:hover::after { transform: scaleX(1); }
+.lc-ic { font-size: 1.4rem; margin-bottom: .5rem; display: block; }
+.lc-ti { font-family: 'Cinzel', serif; font-size: .92rem; color: var(--s0); margin-bottom: .35rem; font-weight: 600; }
+.lc-de { font-size: .85rem; color: var(--td); line-height: 1.65; margin-bottom: .45rem; }
+.lc-co { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .18em; color: var(--gold-d); text-transform: uppercase; }
+
+.lore-text h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--s0); margin-bottom: .7rem; font-weight: 600; }
+.lore-text p  { font-size: .93rem; color: var(--td); line-height: 1.85; margin-bottom: .8rem; }
+.lore-text blockquote {
+  border-left: 2px solid var(--blood);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--s1);
+  font-size: .93rem;
+  line-height: 1.65;
+}
+.lore-text cite {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: .6rem;
+  letter-spacing: .15em;
+  color: var(--blood-lt);
+  margin-top: .25rem;
+  font-style: normal;
+}
+
+/* ════════ GAME PAGE ════════ */
+.game-main { padding: 2rem 2.5vw; }
+
+.game-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--s6);
+}
+.game-logo-big {
+  max-width: 160px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  border: 1px solid var(--s5);
+  flex-shrink: 0;
+}
+.game-year { font-family: 'Cinzel', serif; font-size: .7rem; letter-spacing: .3em; color: var(--gold-d); text-transform: uppercase; margin-bottom: .3rem; }
+.game-desc { font-size: 1.05rem; color: var(--td); line-height: 1.75; max-width: 600px; }
+
+.game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--s5); margin-top: 1.5rem; }
+.game-card { background: var(--s8); padding: 1.2rem 1.3rem; }
+.game-card h4 { font-family: 'Cinzel', serif; font-size: .85rem; color: var(--blood-lt); letter-spacing: .2em; text-transform: uppercase; margin-bottom: .5rem; }
+.game-card p  { font-size: 1.05rem; color: var(--td); line-height: 1.7; }
+
+@media (max-width: 700px) {
+  .game-header {
+    position: relative;
+    overflow: hidden;
+  }
+  .game-logo-big {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.13;
+    z-index: 0;
+  }
+  .game-header > div {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro-top { flex-direction: column; }
+  .loregrid  { grid-template-columns: 1fr; }
+  .game-grid { grid-template-columns: 1fr; }
+}

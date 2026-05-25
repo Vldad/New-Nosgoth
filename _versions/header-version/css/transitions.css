@@ -1,0 +1,31 @@
+/* ═══════════════════════════════════════════════════
+   TRANSITIONS — fade + slide (CSS classes + rAF)
+═══════════════════════════════════════════════════ */
+
+/* Le contenu principal est la cible de la transition */
+#site-body {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+/* Page qui sort — monte et disparaît */
+body.page-out #site-body {
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+/* État initial avant l'entrée — en bas, invisible */
+body.page-before-in #site-body {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: none; /* pas de transition sur l'état initial */
+}
+
+/* Page qui entre — monte vers sa position normale */
+body.page-in #site-body {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
